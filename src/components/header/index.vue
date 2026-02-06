@@ -9,6 +9,7 @@
             <input
                 type="text"
                 placeholder="Pesquisar notícias..."
+                @input="$emit('update:searchQuery', $event.target.value)"
             />
             <button>
                 🔍
@@ -121,5 +122,24 @@
         font-weight: 600;
         cursor: pointer;
     }
+
+    @media (max-width: 768px) {
+        .header {
+            grid-template-columns: 1fr;
+            gap: 16px;
+            padding: 16px;
+        }
+
+        .nav {
+            justify-content: center;
+        }
+
+        .search {
+            max-width: 100%;
+        }
+
+        .cta {
+            justify-self: center;
+        }
+    }
 </style>
-  
